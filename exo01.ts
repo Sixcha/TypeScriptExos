@@ -9,7 +9,7 @@ export interface User {
     id: 1,
   };
 
-  function showStatus(user:User):string | void{
+  function showStatus(user:User):string | undefined{
     if (user.status) {
        return user.status 
     }
