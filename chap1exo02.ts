@@ -1,4 +1,4 @@
-import { User } from "./exo01"
+import { User } from "./chap1exo01"
 
 const users:User[] = []
 
