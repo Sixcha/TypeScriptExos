@@ -2,6 +2,8 @@ import { User } from "./chap1exo01";
 
 const students : number[] = [12, 11, 123, 8, 9, 100, 90, 23, 22, 99, 198, 202, 11, 19, 78, 112] ;
 const alphabet:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
+let groups:object= {}
+console.log(students.length)
 
 function createRandom(){
     let randomNumber = students[Math.floor(Math.random()*students.length)]
@@ -17,24 +19,27 @@ function createRandom(){
         name: randomName.join(''),
         id: randomNumber
     }
-    randomName = []
-    
-    students.splice(students.indexOf(randomNumber,1))
-    randomNumber = students[Math.floor(Math.random()*students.length)]
- 
-    for (let i = 0; i < nameLetters; i++) {
-        const letter = alphabet[Math.floor(Math.random() * alphabet.length)]
-        randomName.push(letter)
-    }
 
-    let student2:User ={
-        name:randomName.join(''),
-        id: randomNumber
-    }
+    students.splice(students.indexOf(randomNumber),1)
 
-    students.splice(students.indexOf(randomNumber,1))
-
-    console.log(student1, student2)
+    return student1
 }
 
-createRandom()
+let i = 1
+
+while (students.length) {
+    
+    let groupNumber = "Group " + (i)
+    i++
+    let group:User[]
+    let student = createRandom()
+    group = [student]
+    student = createRandom()
+    group.push(student)
+    console.log(students)
+
+    groups[groupNumber] = group
+    
+}
+
+console.log(groups)
